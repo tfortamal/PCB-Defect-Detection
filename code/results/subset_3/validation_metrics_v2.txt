@@ -1,0 +1,5 @@
+Subset 2 Validation
+mAP50: 0.893
+mAP50-95: 0.402
+Precision: 0.903
+Recall: 0.837
