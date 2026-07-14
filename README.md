@@ -125,6 +125,10 @@ Each subset is stratified to maintain global class distribution.
 
 Incremental training shows consistent improvement in mAP50 across subsets. Model converges faster on subsequent subsets while retaining and building upon knowledge from previous training.
 
+![Training curves for Subset 6](code/results/subset_6/results.png)
+
+*Loss, precision, recall, and mAP curves over training for the final subset (Subset 6).*
+
 ### Final Test Set Evaluation
 
 Evaluation on completely held-out test set (2,127 unseen images):
@@ -135,6 +139,13 @@ Evaluation on completely held-out test set (2,127 unseen images):
 | mAP50-95 | 0.4224 |
 | Precision | 0.9395 |
 | Recall | 0.8927 |
+
+<p float="left">
+  <img src="code/runs/detect/val-9/confusion_matrix.png" width="49%" />
+  <img src="code/runs/detect/val-9/BoxPR_curve.png" width="49%" />
+</p>
+
+*Confusion matrix and precision-recall curve on the held-out test set.*
 
 ### Per-Class Performance
 
@@ -148,6 +159,15 @@ Evaluation on completely held-out test set (2,127 unseen images):
 | spurious_copper | 0.9210 | 0.90 | 0.90 |
 
 Model performs exceptionally well across all defect classes. Missing hole detection is the strongest (0.98 AP50), while spur detection is most challenging (0.89 AP50) but still well above acceptable thresholds.
+
+### Model Detections on Unseen Test Images
+
+Ground truth (left) vs. model predictions (right) on a batch of held-out test images:
+
+<p float="left">
+  <img src="code/runs/detect/val-9/val_batch0_labels.jpg" width="49%" />
+  <img src="code/runs/detect/val-9/val_batch0_pred.jpg" width="49%" />
+</p>
 
 ## Project Structure
 
